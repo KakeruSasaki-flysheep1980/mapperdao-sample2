@@ -18,9 +18,9 @@ object Daos {
 	// evolutionで作成する -> play run -> ページアクセスで作成可
 
 	trait BaseDao[PC <: DeclaredIds[Long], T <: BaseModel] extends TransactionalCRUD[Long, PC, T] with All[Long, PC, T] {
-		val queryDao = qd
-		val mapperDao = md
-		val txManager = txm
+		protected val queryDao = qd
+		protected val mapperDao = md
+		protected val txManager = txm
 
 		protected val entity: BaseEntity[PC, T]
 	}
