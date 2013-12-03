@@ -18,7 +18,13 @@ object Application extends Controller {
 
 		println("======== findByName: %s".format(userDao.findByName("__name__")))
 
+
+
+
 		val updated = userDao.update(retrieved.get, new User(2L, "__updated__", now, now))
+
+
+
 		println("======== updated: %s".format(updated))
 
 		userDao.delete(2L)
